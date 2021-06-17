@@ -13,11 +13,11 @@ describe('app routes', () => {
       .get('/');
     expect(res.text).toEqual('hi');
   });
+  test('test html fs', async () => {
+    const res = await request(app)
+      .get('/index.html');
+    expect(res.text).toEqual('./index.html', 'utf8');
+  });
 });
 
-test('test html fs', async () => {
-  const res = await request(app)
-    .get('/index.html');
-  expect(res.text).toEqual('./index.html', 'utf8');
-});
 

@@ -3,7 +3,7 @@ const app = require('../lib/app');
 
 describe('app routes', () => {
   // eslint-disable-next-line space-before-function-paren
-  test('get all from / ', async () => {
+  test.skip('get all from / ', async () => {
     // const color = {
     //   body: 'hi',
     //   status: '200 OK',
@@ -15,12 +15,9 @@ describe('app routes', () => {
   });
 });
 
-describe('POST', () => {
-  test('POST /echo', async () => {
-    const res = await request(app)
-      .post('/echo')
-      .send('holla back');
-    expect(res.text).toEqual('holla back');
-  });
-
+test('test html fs', async () => {
+  const res = await request(app)
+    .get('/index.html');
+  expect(res.text).toEqual('./index.html', 'utf8');
 });
+

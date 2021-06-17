@@ -13,10 +13,10 @@ describe('app routes', () => {
       .get('/');
     expect(res.text).toEqual('hi');
   });
-  test('test html fs', async () => {
+  test('test index exists', async() => {
     const res = await request(app)
       .get('/index.html');
-    expect(res.text).toEqual('./index.html', 'utf8');
+    expect(res.text).toEqual('<h2>this is an html string</h2>');
   });
 });
 

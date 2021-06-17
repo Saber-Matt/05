@@ -14,3 +14,13 @@ describe('app routes', () => {
     expect(res.text).toEqual('hi');
   });
 });
+
+describe('POST', () => {
+  test('POST /echo', async () => {
+    const res = await request(app)
+      .post('/echo')
+      .send('holla back');
+    expect(res.text).toEqual('holla back');
+  });
+
+});
